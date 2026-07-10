@@ -1,7 +1,5 @@
-# Имя приложения замени на своё уникальное (fly launch спросит сам,
-# либо поменяй здесь и в команде `fly apps create`).
-app = "cs2-watch-bot"
-primary_region = "waw"  # Варшава — обычно ближе всего из Казахстана; можно поменять
+app = 'cs2friends'
+primary_region = 'ams'
 
 [build]
 
@@ -12,7 +10,3 @@ primary_region = "waw"  # Варшава — обычно ближе всего 
 [mounts]
   source = "cs2bot_data"
   destination = "/data"
-
-# Никакого [[services]] и http-чеков намеренно нет: это фоновый процесс
-# (polling), а не веб-сервер. Fly не будет "усыплять" машину из-за
-# отсутствия http-трафика, потому что тут нет http-трафика по определению.
