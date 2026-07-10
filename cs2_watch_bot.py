@@ -133,10 +133,11 @@ async def send_hourly_summary(context: ContextTypes.DEFAULT_TYPE):
         logger.error(f"Ошибка запроса к Steam API: {e}")
         return
 
-    if playing:
-        text = "🕐 Сейчас в CS2 играют:\n" + "\n".join(f"• {name}" for name in playing.values())
-    else:
-        text = "🕐 Сейчас никто из друзей не играет в CS2."
+    if not playing:
+        # Никто не играет — ничего не отправляем, чтобы не спамить пустыми сводками.
+        return
+
+    text = "🕐 Сейчас в CS2 играют:\n" + "\n".join(f"• {name}" for name in playing.values())
 
     for chat_id in subscribed_chats:
         try:
