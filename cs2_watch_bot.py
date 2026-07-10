@@ -12,9 +12,9 @@ logger = logging.getLogger(__name__)
 # На Fly.io ключи задаются через `fly secrets set ...` (см. README_FLY.md).
 # Никаких значений по умолчанию тут больше нет — если переменная не задана,
 # бот сразу упадёт с понятной ошибкой, а не будет молча работать с чужими ключами.
-STEAM_API_KEY = os.getenv("EC426324E24A8102426C5A158B3B374F")
-TELEGRAM_TOKEN = os.getenv("8956078605:AAGw7heubXh-WKwJej4dX91yYlBfc0FvlZ8")
-STEAM_ID = os.getenv("76561198161778886")  # SteamID64 владельца, чей список друзей проверяем
+STEAM_API_KEY = os.getenv("STEAM_API_KEY")
+TELEGRAM_TOKEN = os.getenv("TELEGRAM_TOKEN")
+STEAM_ID = os.getenv("STEAM_ID")  # SteamID64 владельца, чей список друзей проверяем
 
 CS2_APPID = "730"        # AppID CS2 (тот же, что был у CS:GO)
 CHECK_INTERVAL = 60       # как часто проверять, кто зашёл (секунды)
